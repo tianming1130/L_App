@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.youth.banner.Banner;
 
@@ -20,12 +20,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.zknu.l_app.R;
-import cn.zknu.l_app.util.Const;
 import cn.zknu.l_app.adapter.NewsAdapter;
 import cn.zknu.l_app.bean.News;
 import cn.zknu.l_app.loader.BannerImageLoader;
 import cn.zknu.l_app.net.HttpUtil;
-import cn.zknu.l_app.net.exception.ServerException;
+import cn.zknu.l_app.net.exception.ExceptionEngine;
+import cn.zknu.l_app.util.Const;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +38,7 @@ public class NewsFragment extends Fragment {
     private View mView;
     private Banner mBanner;
     private List<String> mBannerImages;
+    private ProgressBar mProgressBar;
     public NewsFragment() {
         // Required empty public constructor
     }
@@ -54,9 +55,15 @@ public class NewsFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
     private void initView() {
         mRecyclerView=(RecyclerView)mView.findViewById(R.id.recycler_view);
         mBanner=(Banner)mView.findViewById(R.id.banner);
+        mProgressBar=(ProgressBar)mView.findViewById(R.id.progress_bar);
     }
     private void init(){
         mBannerImages=new ArrayList<>();
@@ -74,6 +81,7 @@ public class NewsFragment extends Fragment {
         HttpUtil.getInstance().getNews(new Subscriber<List<News>>() {
             @Override
             public void onSubscribe(Subscription s) {
+                mProgressBar.setVisibility(View.VISIBLE);
                 s.request(Long.MAX_VALUE);
             }
 
@@ -87,14 +95,14 @@ public class NewsFragment extends Fragment {
 
             @Override
             public void onError(Throwable t) {
-                if(t instanceof ServerException){
-                    Toast.makeText(NewsFragment.this.getContext(),((ServerException)t).getMessage(),Toast.LENGTH_SHORT).show();
-                }
+         //       System.out.print(t.getMessage());
+                //Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
+                ExceptionEngine.handleException(getContext(),t);
             }
 
             @Override
             public void onComplete() {
-
+                mProgressBar.setVisibility(View.GONE);
             }
         });
     }

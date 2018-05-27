@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener;
 
+import org.greenrobot.eventbus.EventBus;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
@@ -86,11 +87,18 @@ public class VideoFragment extends Fragment implements OnItemClickListener {
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         Video video=(Video) adapter.getItem(position);
+        EventBus.getDefault().postSticky(video);
         Intent intent=new Intent(getActivity(), VideoActivity.class);
-        intent.putExtra("video_id",video.getId());
-        intent.putExtra("video_name",video.getName());
-        intent.putExtra("video_url",video.getUrl());
-        intent.putExtra("video_thumb_url",video.getVideoThumbUrl());
+//        intent.putExtra("video_id",video.getId());
+//        intent.putExtra("video_name",video.getName());
+//        intent.putExtra("video_url",video.getUrl());
+//        intent.putExtra("video_thumb_url",video.getVideoThumbUrl());
         startActivity(intent);
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 }

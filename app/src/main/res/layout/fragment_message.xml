@@ -5,9 +5,10 @@
              tools:context="cn.zknu.l_app.ui.fragment.MessageFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.baidu.mapapi.map.TextureMapView
+        android:id="@+id/bmapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:clickable="true"></com.baidu.mapapi.map.TextureMapView>
 
 </FrameLayout>

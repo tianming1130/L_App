@@ -19,29 +19,32 @@ public class HttpUtil {
     private static final String TAG = "HttpUtil";
 
     private ApiService mApiService;
-    private static  HttpUtil mHttpUtil=null;
-    private HttpUtil(){
-        mApiService=RetrofitManager.getInstance().getService(ApiService.class);
+    private static HttpUtil mHttpUtil = null;
+
+    private HttpUtil() {
+        mApiService = RetrofitManager.getInstance().getService(ApiService.class);
     }
-    public static HttpUtil getInstance(){
-        if (mHttpUtil==null){
-            synchronized (HttpUtil.class){
-                mHttpUtil=new HttpUtil();
+
+    public static HttpUtil getInstance() {
+        if (mHttpUtil == null) {
+            synchronized (HttpUtil.class) {
+                mHttpUtil = new HttpUtil();
             }
         }
         return mHttpUtil;
     }
 
-    public void getNews(Subscriber<List<News>> subscriber){
-        Flowable<HttpResult<List<News>>> flowable=mApiService.getNews();
+    public void getNews(Subscriber<List<News>> subscriber) {
+        Flowable<HttpResult<List<News>>> flowable = mApiService.getNews();
         //call.enqueue(callback);
         flowable.map(new HttpResultFunction<List<News>>())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(subscriber);
     }
-    public void getVideo(Subscriber<List<Video>> subscriber){
-        Flowable<HttpResult<List<Video>>> flowable=mApiService.getVideo();
+
+    public void getVideo(Subscriber<List<Video>> subscriber) {
+        Flowable<HttpResult<List<Video>>> flowable = mApiService.getVideo();
         //call.enqueue(callback);
         flowable.map(new HttpResultFunction<List<Video>>())
                 .observeOn(AndroidSchedulers.mainThread())
