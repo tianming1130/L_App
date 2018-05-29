@@ -24,12 +24,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    //轮播图
+
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:design:24.2.1'
-    testCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit2:retrofit:2.4.0'
     compile 'com.squareup.retrofit2:converter-gson:2.4.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
@@ -39,9 +41,10 @@ dependencies {
     compile 'com.github.wseemann:FFmpegMediaMetadataRetriever:1.0.14'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
     compile 'io.reactivex.rxjava2:rxjava:2.1.9'
-
     compile 'org.greenrobot:eventbus:3.1.1'
-
-    compile 'com.youth.banner:banner:1.4.10'  //轮播图
+    compile 'com.youth.banner:banner:1.4.10'
     compile 'com.beardedhen:androidbootstrap:2.3.2'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

@@ -13,5 +13,7 @@
     <color name="yellows">#FEE32A</color>
 
     <color name="backGray">#FDFAF0</color>
-    <color name="nomalText">#333333</color>
+    <color name="normalText">#333333</color>
+    <color name="content_color">#666666</color>
+    <color name="term">#44B3De</color>
 </resources>

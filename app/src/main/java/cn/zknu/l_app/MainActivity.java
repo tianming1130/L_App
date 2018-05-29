@@ -14,6 +14,7 @@ import java.util.List;
 
 import cn.zknu.l_app.ui.fragment.CircleFragment;
 import cn.zknu.l_app.ui.fragment.FindFragment;
+import cn.zknu.l_app.ui.fragment.MapFragment;
 import cn.zknu.l_app.ui.fragment.MeFragment;
 import cn.zknu.l_app.ui.fragment.MessageFragment;
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     private BottomNavigationBar mBottomNavigationBar;
     private List<Fragment> mFragments;
-    private String[] mActionBarTitle={"动态","发现","消息","我"};
+    private String[] mActionBarTitle={"动态","发现","消息","地图","我"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +42,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         mFragments.add(new CircleFragment());
         mFragments.add(new FindFragment());
         mFragments.add(new MessageFragment());
+        mFragments.add(new MapFragment());
         mFragments.add(new MeFragment());
 
         mBottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.nav_circle_selector, "动态"))
                 .addItem(new BottomNavigationItem(R.drawable.nav_find_selector, "发现"))
                 .addItem(new BottomNavigationItem(R.drawable.nav_message_selector, "消息"))
+                .addItem(new BottomNavigationItem(R.drawable.nav_message_selector,"地图"))
                 .addItem(new BottomNavigationItem(R.drawable.nav_me_selector, "我"))
                 .setMode(BottomNavigationBar.MODE_FIXED)
                 .initialise();

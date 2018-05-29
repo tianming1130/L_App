@@ -1,9 +1,10 @@
 package cn.zknu.l_app.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -15,7 +16,7 @@ import cn.zknu.l_app.R;
 import cn.zknu.l_app.bean.Video;
 import cn.zknu.l_app.db.DBUtil;
 
-public class VideoActivity extends AppCompatActivity implements View.OnClickListener {
+public class VideoActivity extends BaseActivity implements View.OnClickListener {
     private JZVideoPlayerStandard mJZVideoPlayerStandard;
     private Video mVideo;
     private ImageView mFavoriteImageView;
@@ -24,6 +25,11 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
         mVideo=video;
         mJZVideoPlayerStandard.setUp(mVideo.getUrl()
                 , JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, mVideo.getName());
+
+        Glide.with(this)
+                .load(video.getVideoThumbUrl())
+                .into(mJZVideoPlayerStandard.thumbImageView);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

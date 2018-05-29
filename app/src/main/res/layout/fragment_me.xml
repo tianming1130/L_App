@@ -19,7 +19,7 @@
             <View
                 android:id="@+id/View"
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="25dp"/>
 
             <RelativeLayout
                 android:id="@+id/rl_PersonalCenter"
@@ -28,12 +28,12 @@
 
                 <ImageView
                     android:id="@+id/iv_img"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
                     android:src="@mipmap/touxiang"/>
 
                 <LinearLayout
@@ -51,23 +51,12 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
+                            android:text="未登录"
                             android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:id="@+id/name"/>
-
-                        <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="15dp"-->
-                        <!--android:background="#EAC948"-->
-                        <!--android:paddingLeft="4dp"-->
-                        <!--android:paddingRight="4dp"-->
-                        <!--android:text="Lv1"-->
-                        <!--android:textColor="@color/white"-->
-                        <!--android:textSize="11sp" />-->
+                            android:textSize="18sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -77,49 +66,15 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/sex"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
                             android:layout_marginRight="10dp"
-                            android:textColor="@color/white"
-                            android:textSize="10sp"
-                            android:id="@+id/sex"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:text=""
                             android:textColor="@color/white"
-                            android:textSize="10sp"
-                            android:id="@+id/address"/>
+                            android:textSize="10sp"/>
                     </LinearLayout>
                 </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/msg">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@mipmap/me_tongzhi" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="18dp"
-                        android:background="@drawable/round_red_100"
-                        android:paddingLeft="2dp"
-                        android:paddingRight="2dp"
-                        android:text="1"
-                        android:textColor="@color/white"
-                        android:textSize="9sp"
-                        android:visibility="gone"/>
-                </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
 
@@ -137,7 +92,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_geren" />
+                android:src="@mipmap/me_geren"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -145,13 +100,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="个人中心"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -168,7 +123,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_fabu" />
+                android:src="@mipmap/me_fabu"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -176,13 +131,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="我的发布"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -199,7 +154,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_dingdan" />
+                android:src="@mipmap/me_dingdan"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -207,13 +162,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="订单"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -230,7 +185,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_qianbao" />
+                android:src="@mipmap/me_qianbao"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -238,13 +193,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="钱包"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -261,7 +216,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_youhuiquan" />
+                android:src="@mipmap/me_youhuiquan"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -269,13 +224,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="优惠券"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -292,7 +247,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_shoucang" />
+                android:src="@mipmap/me_shoucang"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -300,13 +255,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="收藏"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -323,7 +278,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_shangjia" />
+                android:src="@mipmap/me_shangjia"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -331,13 +286,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="商家加盟"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -354,7 +309,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_yaoqing" />
+                android:src="@mipmap/me_yaoqing"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -362,13 +317,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="邀请好友"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
 
         <LinearLayout
@@ -385,7 +340,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/me_shezhi" />
+                android:src="@mipmap/me_shezhi"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -393,13 +348,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="设置"
-                android:textColor="@color/nomalText"
-                android:textSize="14sp" />
+                android:textColor="@color/normalText"
+                android:textSize="14sp"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/jump_right" />
+                android:src="@mipmap/jump_right"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

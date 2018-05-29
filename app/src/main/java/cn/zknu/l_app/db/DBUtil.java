@@ -68,8 +68,8 @@ public class DBUtil {
     }
     public void insert(Video video){
 //         // 插入数据
-//        db.execSQL("insert into tb_video values (NULL, ?,?, ?)",
-//                new Object[] { video.getId(),video.getName(), video.getUrl() });
+//        db.execSQL("insert into tb_video values (NULL, ?,?,?,?)",
+//                new Object[] { video.getId(),video.getName(), video.getUrl() ,video.getThumbUrl});
 
         // ContentValues以键值对的形式存放数据
         ContentValues cv = new ContentValues();
